@@ -1,0 +1,23 @@
+class InvalidAgeException extends Exception{
+	InvalidAgeException(String s){
+		super(s);
+	}
+}
+
+public class week3 {
+	static void validate(int age) throws InvalidAgeException{
+		if(age<18){
+			throw new InvalidAgeException(" not eligeble");
+		}else{
+			System.out.println("u can vote");
+		}}
+    public static void main(String[] args) {
+        try{
+		validate(15);
+	}catch(InvalidAgeException e){
+		System.out.println("exception caught" +e.getMessage());
+	}
+
+	System.out.println("down code");
+    }
+}
