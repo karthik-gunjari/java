@@ -1,0 +1,89 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class weekabc extends Frame implements ActionListener {
+
+    Button b1, b2;
+    Label l1, l2;
+    TextField tf1, tf2;
+
+    public weekabc() {
+        b1 = new Button("COMPUTE");
+        b2 = new Button("CLEAR");
+        
+        l1 = new Label("ENTER NUMBER:");
+        l2 = new Label("RESULT:");
+
+        tf1 = new TextField(20);
+        tf2 = new TextField(20);
+
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+
+        setLayout(null);
+
+        add(l1);
+        l1.setBounds(20, 50, 100, 20);
+
+        add(tf1);
+        tf1.setBounds(130, 50, 100, 20);
+
+        add(l2);
+        l2.setBounds(20, 90, 100, 20);
+
+        add(tf2);
+        tf2.setBounds(130, 90, 100, 20);
+        tf2.setEditable(false);
+
+        add(b1);
+        b1.setBounds(20, 150, 100, 20);
+
+        add(b2);
+        b2.setBounds(130, 150, 100, 20);
+        
+        setSize(400, 400); 
+        setVisible(true);
+
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        
+        if (e.getSource() == b1) {
+            
+            int a;
+            long fact = 1;
+
+            try {
+                a = Integer.parseInt(tf1.getText());
+                
+                if (a < 0) {
+                    tf2.setText("Error: < 0");
+                    return;
+                }
+                
+                for (int i = 1; i <= a; i++) {
+                    fact = fact * i;
+                }
+                
+                tf2.setText(String.valueOf(fact));
+
+            } catch (NumberFormatException nfe) {
+                tf2.setText("Invalid Input");
+            }
+
+        } 
+        else if (e.getSource() == b2) {
+            tf1.setText("");
+            tf2.setText("");
+        } 
+    }
+
+    public static void main(String[] args) {
+        new weekabc();
+    }
+}
