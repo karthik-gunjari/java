@@ -1,0 +1,18 @@
+import javax.swing.*;
+public class week3{
+	JFrame f;
+	week3(){
+		f=new JFrame();
+		String data[][]={{"501","raju","50000"},{"502","ravi","70000"},{"503","ramu","90000"}};
+		String column[]={"id","name","salary"};
+		JTable t=new JTable(data,column);
+		 JScrollPane sp = new JScrollPane(t);
+		f.add(sp);
+		f.setSize(300,400);
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	public static void main(String []args){
+		new week3();
+	}
+}
