@@ -1,0 +1,21 @@
+import java.util.*;
+
+interface A{
+	void showA();
+}
+interface B{
+	void ShowB();
+}
+class week3 implements A,B{
+	public void showA(){
+		System.out.println("from a");
+	}
+	public void ShowB(){
+		System.out.println("from b");
+	}
+	public static void main(String []args){
+		week3 obj=new week3();
+		obj.showA();
+		obj.ShowB();
+	}
+}
