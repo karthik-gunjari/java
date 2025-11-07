@@ -1,0 +1,49 @@
+import java.awt.*;
+import java.awt.event.*;
+public class lab extends Frame implements MouseListener,MouseMotionListener{
+	Label statusLabel1;
+	int mouseX=0,MouseY=0;
+	public lab(){
+		statusLabel1=new Label();
+		statusLabel1.setBounds(20,50,300,30);
+		add(statusLabel1);
+
+		addMouseListener(this);
+		addMouseMotionListener(this);
+
+		setSize(400,400);
+		setLayout(null);
+		setVisible(true);
+
+		addWindowListener(new WindowAdapter(){
+			public void windowClosing(WindowEvent e){
+				System.exit(0);
+			}
+		});
+	}
+	public void mouseClicked(MouseEvent me){
+		statusLabel1.setText("Mouse clicked");
+		repaint();
+	}
+	public void mouseEntered(MouseEvent me){
+		statusLabel1.setText("Mouse Entered");
+	}
+	public void mouseExited(MouseEvent me){
+		statusLabel1.setText("Mouse Exited");
+	}
+	public void mousePressed(MouseEvent me){
+		statusLabel1.setText("Mouse Pressed");
+	}
+	public void mouseReleased(MouseEvent me){
+		statusLabel1.setText("Mouse Released");
+	}
+	public void mouseMoved(MouseEvent me){
+		statusLabel1.setText("Mouse Moved at ("+me.getX()+","+me.getY()+")");
+	}
+	public void mouseDragged(MouseEvent me){
+		statusLabel1.setText("Mouse Dragged at ("+me.getX()+","+me.getY()+")");
+	}
+	public static void main(String []args){
+		new lab();
+	}
+}
