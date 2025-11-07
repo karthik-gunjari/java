@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Animal{
+	void sound(){
+		System.out.println("Animal makes sound");
+	}
+}
+class dog extends Animal{
+	void sound(){
+		System.out.println("dog makes sound");
+	}
+}
+
+public class week3{
+	public static void main(String []args){
+		Animal a=new Animal();
+		a.sound();
+		dog d=new dog();
+		d.sound();
+		Animal c=new dog();
+		c.sound();
+	}
+}
