@@ -1,0 +1,33 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class jscroll {
+    JFrame f;
+
+    jscroll() {
+        f = new JFrame("JScrollPane Example");
+
+       
+        JTextArea ta = new JTextArea(20, 40);
+        ta.setText("This is a large text area.\nYou can type or paste long text here...\n\n");
+
+     
+
+       
+        JScrollPane sp = new JScrollPane(ta);
+        sp.setBounds(30, 30, 320, 250);
+
+
+        f.add(sp);
+
+        // Frame setup
+        f.setSize(400, 400);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        new jscroll();
+    }
+}
