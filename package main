@@ -1,0 +1,10 @@
+import mypack.Calculator;
+
+public class Test {
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+
+        System.out.println("Sum = " + c.sum(10, 5));
+        System.out.println("Sub = " + c.sub(10, 5));
+    }
+}
